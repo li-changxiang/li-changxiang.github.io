@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>我的第一篇博客 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##第一章 内容  ##第二章 内容">
+  <meta name="description" content="Mybatis中#{}和${}的区别##1、在Mybatis的映射配置文件中，动态传递参数有两种方式： #{} 占位符 #{} 拼接符  ##2、#{}和${}的区别 a、 #{}为参数占位符？，即sql预编译 ${}为字符串替换，即sql拼接 b、 #{}：动态解析 -&gt;预编译 -&gt; 执行 ${}：动态解析 -&gt;编译 -&gt; 执行 c、 #{} 的变量替换是DBMS中 ${">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://example.com/2020/09/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/09/15/Mybatis%E4%B8%AD#{}%E5%92%8C${}%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##第一章 内容  ##第二章 内容">
+<meta property="og:description" content="Mybatis中#{}和${}的区别##1、在Mybatis的映射配置文件中，动态传递参数有两种方式： #{} 占位符 #{} 拼接符  ##2、#{}和${}的区别 a、 #{}为参数占位符？，即sql预编译 ${}为字符串替换，即sql拼接 b、 #{}：动态解析 -&gt;预编译 -&gt; 执行 ${}：动态解析 -&gt;编译 -&gt; 执行 c、 #{} 的变量替换是DBMS中 ${">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-15T05:52:59.000Z">
-<meta property="article:modified_time" content="2020-09-15T05:54:23.610Z">
+<meta property="article:published_time" content="2020-09-15T07:57:47.945Z">
+<meta property="article:modified_time" content="2020-09-15T07:57:48.134Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,32 +154,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Mybatis中#{}和${}的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      我的第一篇博客
-    </h1>
-  
-
-        
-        <a href="/2020/09/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-09-15T05:52:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##第一章</p>
-<p>内容</p>
+        <h4 id="Mybatis中-和-的区别"><a href="#Mybatis中-和-的区别" class="headerlink" title="Mybatis中#{}和${}的区别"></a>Mybatis中#{}和${}的区别</h4><p>##1、在Mybatis的映射配置文件中，动态传递参数有两种方式：</p>
+<p>#{} 占位符</p>
+<p>#{} 拼接符</p>
 <hr>
-<p>##第二章</p>
-<p>内容</p>
+<p>##2、#{}和${}的区别</p>
+<p>a、</p>
+<p>#{}为参数占位符？，即sql预编译</p>
+<p>${}为字符串替换，即sql拼接</p>
+<p>b、</p>
+<p>#{}：动态解析 -&gt;预编译 -&gt; 执行</p>
+<p>${}：动态解析 -&gt;编译 -&gt; 执行</p>
+<p>c、</p>
+<p>#{} 的变量替换是DBMS中</p>
+<p>${} 的变量替换是在DBMS外</p>
+<p>d、</p>
+<p>#{}：变量替换后，#{}对应的变量自动加上单引号’ ‘</p>
+<p>${}：变量替换后，${} 对应的变量不会加上单引号’ ‘</p>
 <hr>
+<p>3、#{}和${}在使用中的技巧和建议</p>
+<p>a、不论是单个参数还是多个参数，一律都建议使用注解@Param</p>
+<p>b、能用#{}的地方就用#{}，不用或少用${}</p>
+<p>c、表名作参数时，必须用${}，如select * from ${tableName}</p>
+<p>d、order by 时，必须使用${}，如select * from t_user order by ${columnName}</p>
+<p>e、使用${}时，要注意何时加或不加单引号，即${}和’${}’</p>
 
       
 
@@ -259,7 +262,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/15/Mybatis%E4%B8%AD#{}%E5%92%8C${}%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +276,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/15/Mybatis%E4%B8%AD#%7B%7D%E5%92%8C$%7B%7D%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/09/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/09/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客</div>
       <i class="icon-circle-right"></i>
     </a>
   

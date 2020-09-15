@@ -152,6 +152,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mybatis中#{}和${}的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Mybatis中-和-的区别"><a href="#Mybatis中-和-的区别" class="headerlink" title="Mybatis中#{}和${}的区别"></a>Mybatis中#{}和${}的区别</h4><p>##1、在Mybatis的映射配置文件中，动态传递参数有两种方式：</p>
+<p>#{} 占位符</p>
+<p>#{} 拼接符</p>
+<hr>
+<p>##2、#{}和${}的区别</p>
+<p>a、</p>
+<p>#{}为参数占位符？，即sql预编译</p>
+<p>${}为字符串替换，即sql拼接</p>
+<p>b、</p>
+<p>#{}：动态解析 -&gt;预编译 -&gt; 执行</p>
+<p>${}：动态解析 -&gt;编译 -&gt; 执行</p>
+<p>c、</p>
+<p>#{} 的变量替换是DBMS中</p>
+<p>${} 的变量替换是在DBMS外</p>
+<p>d、</p>
+<p>#{}：变量替换后，#{}对应的变量自动加上单引号’ ‘</p>
+<p>${}：变量替换后，${} 对应的变量不会加上单引号’ ‘</p>
+<hr>
+<p>3、#{}和${}在使用中的技巧和建议</p>
+<p>a、不论是单个参数还是多个参数，一律都建议使用注解@Param</p>
+<p>b、能用#{}的地方就用#{}，不用或少用${}</p>
+<p>c、表名作参数时，必须用${}，如select * from ${tableName}</p>
+<p>d、order by 时，必须使用${}，如select * from t_user order by ${columnName}</p>
+<p>e、使用${}时，要注意何时加或不加单引号，即${}和’${}’</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/15/Mybatis%E4%B8%AD#%7B%7D%E5%92%8C$%7B%7D%E7%9A%84%E5%8C%BA%E5%88%AB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
